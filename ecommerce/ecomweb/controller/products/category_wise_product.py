@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from ecomweb.models import service, Product, Order ,author,categories
+from ecomweb.models import service, Product, Order ,author,categories , banner
 from django.views import View
 
 class Home(View):
@@ -31,5 +31,6 @@ class Home(View):
     def get(self,request):
         service1 = service.objects.all()
         author1 = author.objects.all()
+        banner1 = banner.objects.values('image')
         allProds = categories.objects.values('id','image','category_name')
-        return render(request, "home2.html", {'allProds': allProds, 'serv100': service1 , 'author1':author1})
+        return render(request, "home2.html", {'allProds': allProds, 'serv100': service1 , 'author1':author1,'banner2':banner1})

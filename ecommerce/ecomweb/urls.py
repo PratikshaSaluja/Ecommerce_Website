@@ -10,7 +10,8 @@ from ecomweb.controller.contact.contact import *
 from ecomweb.controller.checkout.checkout import *
 from ecomweb.controller.order.order import *
 from ecomweb.controller.portfolio.portfolio import *
-from . import views
+
+
 urlpatterns = [
 
     path('', Home.as_view(), name="Home"),
@@ -22,6 +23,7 @@ urlpatterns = [
     path('description/<str:description_id>/', description, name='description'),
     path('contact', contact, name='contact'),
     path('cart', cart, name='cart'),
+
     path('sub_category/<str:subcategory_id>/', sub_category, name='sub_category'),
     path('checkout', CheckOut.as_view() , name='checkout'),
     path('order', OrderView.as_view() , name='order'),

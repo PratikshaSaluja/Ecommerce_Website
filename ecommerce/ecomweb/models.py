@@ -78,3 +78,5 @@ class author(models.Model):
     subheading = models.CharField(max_length=50)
     description = models.TextField()
 
+class banner(models.Model):
+    image = models.ImageField(upload_to="pics")
