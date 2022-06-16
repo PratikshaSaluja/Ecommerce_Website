@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title> - Index</title>
+    <link href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' rel='stylesheet'>
+    <link href='https://use.fontawesome.com/releases/v5.7.2/css/all.css' rel='stylesheet'>
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+          rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="/static/assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="/static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="/static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/static/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="/static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+
+    <link href='https://use.fontawesome.com/releases/v5.7.2/css/all.css' rel='stylesheet'>
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.js"></script>
+    <link href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' rel='stylesheet'>
+
+    <!-- Template Main CSS File -->
+    <link href="/static/assets/css/style.css" rel="stylesheet">
+
+
+</head>
+
+
+<body>
+{% load cart %}
+
+
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top d-flex justify-content-center align-items-center header-transparent">
+
+    <nav id="navbar" class="navbar">
+        <ul>
+
+            {% if user.is_authenticated %}
+
+            </li>
+            <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+                    <li><a class="nav-link scrollto" href="/services">Services</a></li>
+            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+            &emsp;&emsp;&emsp;
+            <li><a class="nav-link scrollto active" href="#">Hello! {{user.first_name}}</a></li>
+            <li class="nav-item ">
+          <a class="nav-link" href="/cart"> <i class="bx bx-cart"></i> Cart
+            <span class="btn btn-outline-secondary">{{request.session.cart.keys|length}}</span>
+            <span class="sr-only">(current)</span></a>
+        </li>
+            <li><a class="nav-link scrollto" href="/order"> Orders </a></li>
+            <li><a class="nav-link scrollto" href="/logout">Logout</a></li>
+            <nav class="navbar navbar-light bg-light">
+
+                <div class="container-fluid">
+
+                </div>
+            </nav>
+
+
+            {% else %}
+            <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+            <li><a class="nav-link scrollto" href="/services">Services</a></li>
+
+            <li><a class="nav-link scrollto" href="/signup">Register</a></li>
+            <li><a class="nav-link scrollto" href="/login">Login</a></li>
+
+            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+
+
+           &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+             <li class="nav-item ">
+          <a class="nav-link" href="/cart"> <i class="bx bx-cart"></i> Cart
+            <span class="btn btn-outline-secondary">{{request.session.cart.keys|length}}</span>
+            <span class="sr-only">(current)</span></a>
+        </li>
+
+
+            {% endif %}
+
+
+        </ul>
+
+        <i class="bi bi-list mobile-nav-toggle"></i>
+
+
+    </nav><!-- .navbar -->
+
+</header><!-- End Header -->
+
+<!-- ======= Hero Section ======= -->
+
+
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="d-flex align-items-center">
+
+    <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+
+    </div>
+
+</section>
+</body>
+<!-- End Hero -->
+
+<main id="main">
+    <div class="container-fluid">
+
+
+        <!--Slideshow starts here -->
+
+        
+
+        <div class="bbb_viewed">
+
+            <div class="row">
+
+                <div class="bbb_viewed_title_container">
+                    
+                    <div class="bbb_viewed_nav_container">
+                        <div class="bbb_viewed_nav bbb_viewed_prev"><i class="fas fa-chevron-left"></i></div>
+                        <div class="bbb_viewed_nav bbb_viewed_next"><i class="fas fa-chevron-right"></i></div>
+                    </div>
+                </div>
+                <div class="bbb_viewed_slider_container">
+                    <div class="owl-carousel owl-theme bbb_viewed_slider">
+                        {% for i in allProds %}
+                        <div class="owl-item">
+                            <h5 class="card-title">{{i.category_name}}&emsp; </h5>
+                            <a href="{% url 'sub_category' i.id %}">
+                            <div class="product-image">
+                                <img src='/media/{{i.image}}' class="card-img-top" height="400" width="400" alt="...">
+                            </div>
+                            <div class="card-body">
+                                
+                                    
+                                      
+                                    </a>
+                               
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    
+
+    <section id="testimonials" class="testimonials">
+        <div class="container position-relative">
+
+            <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+                <div class="swiper-wrapper">
+                              {% for i in author1 %}
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <img src='/media/{{i.authorimage}}' class="testimonial-img"
+                                 alt="">
+                            <h3>{{ i.heading }}</h3>
+                            <h4>{{ i.subheading }}</h4>
+                            <p>
+                                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                {{ i.description }}
+                                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                            </p>
+                        </div>
+                    </div><!-- End testimonial item -->
+   {% endfor %}
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+    <!-- ======= Contact Me Section ======= -->
+    <section id="contact" class="contact">
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Contact Me</h2>
+                <p>Hey ! If you have any queries you can submit your queries here .</p>
+            </div>
+
+            <div class="row">
+
+                <div class="col-lg-6">
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="info-box">
+                                <i class="bx bx-share-alt"></i>
+                                <h3>Social Profiles</h3>
+                                <div class="social-links">
+                                    <a href="https://twitter.com/SoftProdigy" class="twitter"><i
+                                            class="bi bi-twitter"></i></a>
+                                    <a href="https://www.facebook.com/softprodigysolutions" class="facebook"><i
+                                            class="bi bi-facebook"></i></a>
+                                    <a href="https://www.instagram.com/softprodigy_official" class="instagram"><i
+                                            class="bi bi-instagram"></i></a>
+                                    <a href="https://www.skype.com/en/get-skype/" class="google-plus"><i
+                                            class="bi bi-skype"></i></a>
+                                    <a href="https://www.linkedin.com/company/softprodigy" class="linkedin"><i
+                                            class="bi bi-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="info-box mt-4">
+                                <i class="bx bx-envelope"></i>
+                                <h3>Email Me</h3>
+                                <p>softprodigy.com</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="info-box mt-4">
+                                <i class="bx bx-phone-call"></i>
+                                <h3>Call Me</h3>
+                                <p>+1 5589 55488 55</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-6">
+                    <form action="/contact" method="post" role="form">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-md-6 form-group">
+                                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name"
+                                       required>
+                            </div>
+                            <div class="col-md-6 form-group mt-3 mt-md-0">
+                                <input type="email" class="form-control" name="email" id="email"
+                                       placeholder="Your Email" required>
+                            </div>
+                        </div>
+                        <div class="form-group mt-3">
+                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject"
+                                   required>
+                        </div>
+                        <div class="form-group mt-3">
+                            <textarea class="form-control" name="msg" id="msg" rows="6" placeholder="Message"
+                                      required></textarea>
+                        </div>
+
+
+                        <div class="text-center">
+
+
+              <input type="submit" class="btn float-center btn-outline-primary col-lg-6" onclick="myFunction()" value="Submit">
+                        </div>
+                    </form>
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+    </section>
+    <!-- End Contact Me Section -->
+
+</main><!-- End #main -->
+
+<!-- ======= Footer ======= -->
+<footer id="footer">
+    <div class="container">
+        <h3>Softprodigy</h3>
+        <p>SoftProdigy is Nasscom certified software design and development company established in the year 2006.</p>
+        <div class="social-links">
+            <a href="https://twitter.com/SoftProdigy" class="twitter"><i class="bi bi-twitter"></i></a>
+            <a href="https://www.facebook.com/softprodigysolutions" class="facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/softprodigy_official" class="instagram"><i
+                    class="bi bi-instagram"></i></a>
+            <a href="https://www.skype.com/en/get-skype/" class="google-plus"><i class="bi bi-skype"></i></a>
+            <a href="https://www.linkedin.com/company/softprodigy" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        </div>
+        <div class="copyright">
+            &copy; Copyright <strong><span>Softprodigy</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+            Designed by <a href="https://softprodigy.com/">Softprodigy</a>
+        </div>
+    </div>
+</footer><!-- End Footer -->
+
+<div id="preloader"></div>
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i>
+</a>
+<!-- Vendor JS Files -->
+<script src="/static/assets/vendor/purecounter/purecounter.js"></script>
+<script src="/static/assets/vendor/aos/aos.js"></script>
+<script src="/static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/static/assets/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="/static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="/static/assets/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="/static/assets/vendor/php-email-form/validate.js"></script>
+
+<!-- Template Main JS File -->
+<script src="/static/assets/js/main.js"></script>
+
+
+<script type='text/Javascript'>$(document).ready(function()
+            {
+
+
+            if($('.bbb_viewed_slider').length)
+            {
+            var viewedSlider = $('.bbb_viewed_slider');
+
+            viewedSlider.owlCarousel(
+            {
+            loop:true,
+            margin:30,
+            autoplay:true,
+            autoplayTimeout:6000,
+            nav:false,
+            dots:false,
+            responsive:
+            {
+            0:{items:1},
+            575:{items:2},
+            768:{items:3},
+            991:{items:4},
+            1199:{items:4}
+            }
+            });
+
+            if($('.bbb_viewed_prev').length)
+            {
+            var prev = $('.bbb_viewed_prev');
+            prev.on('click', function()
+            {
+            viewedSlider.trigger('prev.owl.carousel');
+            });
+            }
+
+            if($('.bbb_viewed_next').length)
+            {
+            var next = $('.bbb_viewed_next');
+            next.on('click', function()
+            {
+            viewedSlider.trigger('next.owl.carousel');
+            });
+            }
+            }
+
+
+            });
+</script>
+<script>
+function myFunction() {
+  alert("Your response has been saved . Admin will resolve your queries soon .");
+}
+</script>
+
+</html>

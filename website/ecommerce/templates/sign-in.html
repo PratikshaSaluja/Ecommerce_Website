@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>- SignIn</title>
+  <meta content="" name="">
+  <meta content="" name="">
+
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Satisfy" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="static/assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+ <form class="d-flex" action='/login',  method='post'>{% csrf_token %}
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div class="hero-container">
+      <h1>Sign In</h1>
+	  
+	  <div class="Sign_in_from wd-40" >
+          <form action="static/forms/contact.php" method="post" role="form" class="php-email-form">
+                <div class="form-group mt-3">
+                  <input type="username" class="form-control" name="username" id="username" placeholder="Username" required>
+                </div>
+              <div class="form-group mt-3">
+                <input type="password" class="form-control" name="password" id="password" placeholder="password" required>
+              </div>
+              <div class="text-center">
+			  <button class="btn btn-primary mt-3 mr-3" type="submit">Sign In</button>
+
+			  </div>
+          <br>
+
+           </form>
+             <div>
+            {% for message in messages %}
+            <h3> {{message}}</h3>
+            <style>
+                h3{
+                  color:white
+                }
+            </style>
+            {% endfor %}
+        </div>
+          </div>
+		  
+    </div>
+  </section><!-- End Hero -->
+
+
+  <!-- ======= Footer ======= -->
+  
+
+  <!-- Vendor JS Files -->
+  <script src="/static/assets/vendor/purecounter/purecounter.js"></script>
+  <script src="/static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/static/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="/static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="/static/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="/static/assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="/static/assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="/static/assets/js/main.js"></script>
+</form>
+</body>
+
+</html>
