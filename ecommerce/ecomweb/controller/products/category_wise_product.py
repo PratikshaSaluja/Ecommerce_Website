@@ -1,5 +1,11 @@
 from django.shortcuts import render, redirect
-from ecomweb.models import service, Product, Order ,author,categories , banner
+from ecomweb.structures.Order import *
+from ecomweb.structures.services import *
+from ecomweb.structures.Products import *
+from ecomweb.structures.categories import *
+from ecomweb.structures.Order import *
+from ecomweb.structures.author import *
+from ecomweb.structures.banner import *
 from django.views import View
 
 class Home(View):

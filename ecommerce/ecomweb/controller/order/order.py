@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from ecomweb.models import Order
+from ecomweb.structures.Order import *
 from django.contrib.auth.models import User, auth
 from django.views import View
 class OrderView(View):

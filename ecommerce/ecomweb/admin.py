@@ -1,5 +1,13 @@
 from django.contrib import admin
-from .models import service, contacts , Product , categories , detail , Order, author , banner
+from ecomweb.structures.Order import *
+from ecomweb.structures.services import *
+from ecomweb.structures.Products import *
+from ecomweb.structures.categories import *
+from ecomweb.structures.Order import *
+from ecomweb.structures.detail import *
+from ecomweb.structures.author import *
+from ecomweb.structures.contact import *
+from ecomweb.structures.banner import *
 admin.site.register(categories)
 admin.site.register(service)
 admin.site.register(contacts)

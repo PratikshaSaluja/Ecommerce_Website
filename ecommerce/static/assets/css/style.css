@@ -300,7 +300,7 @@ h1, h2, h3, h4, h5, h6 {
 --------------------------------------------------------------*/
 #header {
   transition: all 0.5s;
-  background: #e6f2fb;
+  background: #012845;
   z-index: 997;
   padding: 15px 0;
   border-bottom: 1px solid #e6f2fb;
@@ -355,7 +355,7 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: space-between;
   padding: 10px 0 10px 30px;
   font-size: 14px;
-  color: #16507b;
+  color: #f1f5f7;
   white-space: nowrap;
   transition: 0.3s;
 }
@@ -365,10 +365,10 @@ h1, h2, h3, h4, h5, h6 {
   margin-left: 5px;
 }
 .navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover > a {
-  color: #2487ce;
+  color: #eff6fa;
 }
 .navbar .getstarted, .navbar .getstarted:focus {
-  background: #2487ce;
+  background:#012845;
   padding: 8px 20px;
   margin-left: 30px;
   border-radius: 4px;
@@ -376,7 +376,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .navbar .getstarted:hover, .navbar .getstarted:focus:hover {
   color: #fff;
-  background: #3194db;
+  background: #012845;
 }
 .navbar .dropdown ul {
   display: block;
@@ -1500,4 +1500,8 @@ text-shadow: none;
 .product-image {
     height: 400px;
     overflow: hidden;
+}
+.image_overflow {
+  height: 300px;
+  overflow: hidden;
 }
