@@ -37,13 +37,7 @@
 
     <!-- Template Main CSS File -->
     <link href="/static/assets/css/style.css" rel="stylesheet">
-    <style type="text/css">
-        #banner {
-        background: #000;
-        padding-top: 80px;
-        padding-bottom: 0;
-      }
-      </style>
+  
 
 </head>
 
@@ -125,7 +119,31 @@
 <!-- End Hero -->
 
 <main id="main">
-  
+    <section class="hero-section">
+        <div class="container-fluid">
+            <!--Slideshow starts here -->
+            <div class="bbb_viewed">
+                <div class="row">
+                    <div class="bbb_viewed_slider_container">
+                        <div class="owl-carousel owl-theme bbb_viewed_slider">
+                            {% for i in allProds %}
+                            <div class="owl-item">
+                                <h5 class="card-title">{{i.category_name}}&emsp; </h5>
+                                <a href="{% url 'sub_category' i.id %}">
+                                <div class="product-image">
+                                    <img src='/media/{{i.image}}' class="card-img-top" height="400" width="400" alt="...">
+                                </div>
+                                <div class="card-body">
+                                        </a>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <section id="banner" class="banner">
         <!-- Carousel -->
   <div id="demo" class="carousel slide" data-bs-ride="carousel">
@@ -159,43 +177,6 @@
   </div>
 
       </section>
-    <div class="container-fluid">
-
-
-        <!--Slideshow starts here -->
-
-        
-
-        <div class="bbb_viewed">
-
-            <div class="row">
-
-                
-                <div class="bbb_viewed_slider_container">
-                    <div class="owl-carousel owl-theme bbb_viewed_slider">
-                        {% for i in allProds %}
-                        <div class="owl-item">
-                            <h5 class="card-title">{{i.category_name}}&emsp; </h5>
-                            <a href="{% url 'sub_category' i.id %}">
-                            <div class="product-image">
-                                <img src='/media/{{i.image}}' class="card-img-top" height="400" width="400" alt="...">
-                            </div>
-                            <div class="card-body">
-                                
-                                    
-                                      
-                                    </a>
-                               
-                            </div>
-                        </div>
-                        {% endfor %}
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-    </div>
 
     
 
