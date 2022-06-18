@@ -19,6 +19,6 @@ class CheckOut(View):
                           )
             order.save()
         request.session['cart'] = {}
-        return redirect('order')
+        return redirect('order/order')
     def get(self,request):
-        return render(request,'checkout.html')
+        return render(request,'checkout/checkout.html')

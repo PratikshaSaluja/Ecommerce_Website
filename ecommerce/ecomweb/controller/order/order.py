@@ -9,4 +9,4 @@ class OrderView(View):
             print(user1)
             orders = Order.get_orders_by_user(user.id)
             print(orders)
-            return render(request, 'order.html', {'orders': orders})
+            return render(request, 'orders/order.html', {'orders': orders})

@@ -58,7 +58,7 @@ ROOT_URLCONF = 'ecommerce.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': ['designs'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'ecommerce.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': config('DBNAME', default='db'),
+        'NAME': config('DBNAME', default='ecomdb'),
         'USER': config('DBUSR', default='root'),
         'PASSWORD': config('DBPWD', default=''),
         'HOST': config('DBHOST', default='localhost'),

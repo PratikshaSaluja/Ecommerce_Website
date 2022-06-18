@@ -1,0 +1,82 @@
+
+<body>
+<footer id="footer">
+    <div class="container">
+        <h3>Softprodigy</h3>
+        <p>SoftProdigy is Nasscom certified software design and development company established in the year 2006.</p>
+        <div class="social-links">
+            <a href="https://twitter.com/SoftProdigy" class="twitter"><i class="bi bi-twitter"></i></a>
+            <a href="https://www.facebook.com/softprodigysolutions" class="facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/softprodigy_official" class="instagram"><i
+                    class="bi bi-instagram"></i></a>
+            <a href="https://www.skype.com/en/get-skype/" class="google-plus"><i class="bi bi-skype"></i></a>
+            <a href="https://www.linkedin.com/company/softprodigy" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        </div>
+        <div class="copyright">
+            &copy; Copyright <strong><span>Softprodigy</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+            Designed by <a href="https://softprodigy.com/">Softprodigy</a>
+        </div>
+    </div>
+</footer>
+</body>
+<script src="/static/assets/vendor/purecounter/purecounter.js"></script>
+<script src="/static/assets/vendor/aos/aos.js"></script>
+<script src="/static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/static/assets/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="/static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="/static/assets/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="/static/assets/vendor/php-email-form/validate.js"></script>
+<script src="/static/assets/js/main.js"></script>
+<script type='text/Javascript'>$(document).ready(function()
+            {
+            if($('.bbb_viewed_slider').length)
+            {
+            var viewedSlider = $('.bbb_viewed_slider');
+
+            viewedSlider.owlCarousel(
+            {
+            loop:true,
+            margin:30,
+            autoplay:true,
+            autoplayTimeout:6000,
+            nav:false,
+            dots:false,
+            responsive:
+            {
+            0:{items:1},
+            575:{items:2},
+            768:{items:3},
+            991:{items:4},
+            1199:{items:4}
+            }
+            });
+
+            if($('.bbb_viewed_prev').length)
+            {
+            var prev = $('.bbb_viewed_prev');
+            prev.on('click', function()
+            {
+            viewedSlider.trigger('prev.owl.carousel');
+            });
+            }
+
+            if($('.bbb_viewed_next').length)
+            {
+            var next = $('.bbb_viewed_next');
+            next.on('click', function()
+            {
+            viewedSlider.trigger('next.owl.carousel');
+            });
+            }
+            }
+            });
+</script>
+<script>
+function myFunction() {
+  alert("Your response has been saved . Admin will resolve your queries soon .");
+}
+</script>
+</html>
+

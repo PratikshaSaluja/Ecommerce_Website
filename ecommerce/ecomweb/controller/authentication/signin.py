@@ -18,7 +18,7 @@ def login(request):
             messages.info(request,'Invalid Credentials . Please fill the correct username and password.')
             return redirect('login')
     else:
-        return render(request, 'sign-in.html')
+        return render(request, 'login/signin.html')
 
 @login_required(login_url='/login')
 def logout(request):

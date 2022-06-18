@@ -8,6 +8,6 @@ def contact(request):
 
         Contact = contacts(name=name, email=email, subject=subject, msg=msg)
         Contact.save()
-        return redirect("/contact")
+        return redirect("contact/contact")
     else:
-        return render(request, "contact.html")
+        return render(request, "contact/contact.html")

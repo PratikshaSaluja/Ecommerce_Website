@@ -26,7 +26,7 @@ def signup(request):
                 print("user successfully registered ")
         else:
                 messages.info(request,"Your passwords didn't match . Please fill the same passwords.")
-                return redirect('/signup')
+                return redirect('registration/sign-up')
         return redirect('/login')
     else:
-        return render(request, "sign-up.html")
+        return render(request, "registration/sign-up.html")

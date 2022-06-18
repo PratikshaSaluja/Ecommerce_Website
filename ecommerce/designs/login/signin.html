@@ -1,0 +1,34 @@
+{% extends "layout/base.html" %}
+{% block content %}
+<form class="d-flex" action='/login',  method='post'>{% csrf_token %}
+  <section id="hero">
+    <div class="hero-container">
+      <h1>Sign In</h1>
+        <div class="Sign_in_from wd-40" >
+          <form action="static/forms/contact.php" method="post" role="form" class="php-email-form">
+                <div class="form-group mt-3">
+                  <input type="username" class="form-control" name="username" id="username" placeholder="Username" required>
+                </div>
+              <div class="form-group mt-3">
+                <input type="password" class="form-control" name="password" id="password" placeholder="password" required>
+              </div>
+              <div class="text-center">
+			  <button class="btn btn-primary mt-3 mr-3" type="submit">Sign In</button>
+              </div>
+          <br>
+          </form>
+             <div>
+            {% for message in messages %}
+            <h3> {{message}}</h3>
+            <style>
+                h3{
+                  color:white
+                }
+            </style>
+            {% endfor %}
+        </div>
+          </div>
+    </div>
+  </section>
+</form>
+{% endblock %}

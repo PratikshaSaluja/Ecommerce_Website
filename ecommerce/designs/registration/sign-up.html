@@ -1,0 +1,47 @@
+{% extends "layout/base.html" %}
+{% block content %}
+ <form class="d-flex" action='signup',  method='post'>{% csrf_token %}
+  <section id="hero">
+    <div class="hero-container">
+      <h1>Sign Up</h1>
+        <div class="Sign_in_from wd-40" >
+           <form action="static/forms/contact.php" method="post" role="form" class="php-email-form">
+			    <div class="form-group mt-3">
+                  <input type="text" name="first_name" class="form-control" id="first_name" placeholder="First Name" required>
+                </div>
+                 <div class="form-group mt-3">
+                  <input type="text" name="last_name" class="form-control" id="last_name" placeholder="Last Name" required>
+                </div>
+                <div class="form-group mt-3">
+                  <input type="email" class="form-control" name="email" id="email" placeholder=" Email" required>
+                </div>
+                <div class="form-group mt-3">
+                <input type="password" class="form-control" name="username" id="username" placeholder="username" required>
+              </div>
+               <div class="form-group mt-3">
+                <input type="password" class="form-control" name="password1" id="password1" placeholder="password" required>
+              </div>
+			  <div class="form-group mt-3">
+                <input type="password" class="form-control" name="password2" id="password2" placeholder=" Confirm password" required>
+              </div>
+              <div class="text-center">
+			    <button class="btn btn-primary mt-3 mr-3" type="submit">Sign Up</button>
+              </div>
+          </form>
+          </div>
+        <br>
+        <div>
+            {% for message in messages %}
+            <h3> {{message}}</h3>
+            <style>
+                h3{
+                  color:white
+                }
+            </style>
+            {% endfor %}
+        </div>
+
+    </div>
+  </section>
+ </form>
+{% endblock %}
