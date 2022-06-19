@@ -21,13 +21,13 @@
             {% for product in products2 %}
                 <tr>
                     <td>{{forloop.counter}}</td>
-                    <td><img style="height: 80px;" class="rounded-circle"  src="{{product.image.url}} " alt=""><br>
+                    <td><img style="height: 80px;" class="rounded-circle"  src="{{product.product.image.url}} " alt=""><br>
                         <a href="{% url 'description' product.id %}"> View Product </a>
                          </td>
-                    <td>{{product.product_name}}</td>
-                    <td>{{product.price|currency}}</td>
-                    <td>{{product|cart_quantity:request.session.cart}}</td>
-                    <td>{{product|price_total:request.session.cart|currency}}</td>
+                    <td>{{product.product.product_name}}</td>
+                    <td>{{product.product.price|currency}}</td>
+                    <td>{{product.product|cart_quantity:request.session.cart}}</td>
+                    <td>{{product.product|price_total:request.session.cart|currency}}</td>
                 </tr>
             {% endfor %}
             </tbody>

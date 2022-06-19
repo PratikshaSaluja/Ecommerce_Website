@@ -1,31 +1,14 @@
 {% extends "layout/base.html" %}
 {% block content%}
+<section id="hero" class="d-flex align-items-center">
+
+    <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+
+    </div>
+
+</section>
 <main id="main">
-     <section id="banner" class="banner">
-  <div id="demo" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-indicators">
-          <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-      <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-      <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-    </div>
 
-    <div class="carousel-inner">
-        {% for j in banner2 %}
-      <div class="carousel-item active">
-          <img src='/media/{{j.image}}'  class="d-block" style="width:100%">
-      </div>
-      {% endfor %}
-    </div>
-
-    <!-- Left and right controls/icons -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
-      <span class="carousel-control-next-icon"></span>
-    </button>
-  </div>
-     </section>
     <section class="hero-section">
         <div class="container-fluid">
             <!--Slideshow starts here -->
@@ -51,6 +34,21 @@
             </div>
         </div>
     </section>
+    <div class="bbb_viewed1">
+                <div class="row">
+                    <div class="bbb_viewed1_slider_container">
+                        <div class="owl-carousel owl-theme bbb_viewed1_slider">
+                             {% for j in banner2 %}
+                            <div class="product-image">
+                                    <img src='/media/{{j.image}}' class="card-img-top" height="400" width="400" alt="...">
+                                </div>
+                            {% endfor %}
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
     <section id="testimonials" class="testimonials">
         <div class="container position-relative">
             <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
