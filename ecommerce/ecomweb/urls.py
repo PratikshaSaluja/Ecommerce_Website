@@ -20,7 +20,7 @@ urlpatterns = [
     path('signup', signup, name='signup'),
     path('services',services, name='services'),
     path('portfolio/<str:productdetail_id>/', portfolio, name='portfolio'),
-    path('description/<str:description_id>/', description, name='description'),
+    path('description/<str:description_id>/', description.as_view(), name='description'),
     path('contact', contact, name='contact'),
     path('cart', cart, name='cart'),
 
