@@ -2,7 +2,8 @@ from django.shortcuts import render, redirect
 from ecomweb.structures.Products import *
 from django.views import View
 class description(View):
-    def post(self, request):
+    def post(self, request,description_id):
+        desc1 = Product.objects.filter(id=description_id).values('id', 'product_name', 'quantity', 'category_id', 'price' ,'desc', 'image')
         product = request.POST.get('product')
         remove = request.POST.get('remove')
         cart = request.session.get('cart')
@@ -25,7 +26,7 @@ class description(View):
 
         request.session['cart'] = cart
         print('cart', request.session['cart'])
-        return redirect('/description')
+        return render(request, 'description/description.html',{'desc2' : desc1})
     def get(self,request,description_id):
         desc1 = Product.objects.filter(id=description_id).values('id','product_name', 'quantity', 'category_id', 'price' ,'desc', 'image')
         return render(request, 'description/description.html',{'desc2' : desc1})
