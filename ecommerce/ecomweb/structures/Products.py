@@ -13,4 +13,4 @@ class Product(models.Model):
 
     @staticmethod
     def get_products_by_id(ids):
-        return Product.objects.filter(id__in=ids)
+        return Product.objects.filter(id__in =ids)

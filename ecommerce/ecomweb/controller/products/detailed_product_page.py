@@ -3,7 +3,8 @@ from ecomweb.structures.Products import *
 from django.views import View
 class description(View):
     def post(self, request,description_id):
-        desc1 = Product.objects.filter(id=description_id).values('id', 'product_name', 'quantity', 'category_id', 'price' ,'desc', 'image')
+        desc1 = Product.objects.filter(id=description_id)
+        
         product = request.POST.get('product')
         remove = request.POST.get('remove')
         cart = request.session.get('cart')
@@ -26,7 +27,9 @@ class description(View):
 
         request.session['cart'] = cart
         print('cart', request.session['cart'])
+        print(desc1)
         return render(request, 'description/description.html',{'desc2' : desc1})
     def get(self,request,description_id):
-        desc1 = Product.objects.filter(id=description_id).values('id','product_name', 'quantity', 'category_id', 'price' ,'desc', 'image')
+        desc1 = Product.objects.filter(id=description_id)#.values('id','product_name', 'quantity', 'category_id', 'price' ,'desc', 'image')
+        print(desc1)
         return render(request, 'description/description.html',{'desc2' : desc1})

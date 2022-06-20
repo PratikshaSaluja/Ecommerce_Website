@@ -6,7 +6,7 @@ def is_in_cart(product, cart):
     keys = cart.keys()
     for id in keys:
         if id != "null":
-            if int(id) == product['id']:
+            if int(id) == int(product.id):
                 return True
         return False;
 
@@ -14,8 +14,9 @@ def is_in_cart(product, cart):
 def cart_quantity(product, cart):
     keys = cart.keys()
     for id in keys:
+        print(id,product,"jjjjj")
         if id != "null":
-            if int(id) == product['id']:
+            if int(id) == product.id:
                 return cart.get(id)
         return 0;
 

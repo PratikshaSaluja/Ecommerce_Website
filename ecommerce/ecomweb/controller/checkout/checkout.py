@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views import View
+from ecomweb.structures.Products import *
+from ecomweb.structures.Order import *
 class CheckOut(View):
     def post(self, request):
         address = request.POST.get('address')
@@ -19,6 +21,6 @@ class CheckOut(View):
                           )
             order.save()
         request.session['cart'] = {}
-        return redirect('order/order')
+        return redirect('/order')
     def get(self,request):
         return render(request,'checkout/checkout.html')
