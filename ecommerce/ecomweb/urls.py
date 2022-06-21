@@ -22,7 +22,7 @@ urlpatterns = [
     path('portfolio/<str:productdetail_id>/', portfolio, name='portfolio'),
     path('description/<str:description_id>/', description.as_view(), name='description'),
     path('contact', contact, name='contact'),
-    path('cart', cart, name='cart'),
+    path('cart', cart.as_view() , name='cart'),
 
     path('sub_category/<str:subcategory_id>/', sub_category, name='sub_category'),
     path('checkout', CheckOut.as_view() , name='checkout'),

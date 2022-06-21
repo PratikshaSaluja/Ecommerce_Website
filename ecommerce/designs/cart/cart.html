@@ -4,7 +4,7 @@
 {% load custom_filter %}
 <div class="container">
     <div class="border rounded p-5 m-5">
-        <p class="display-4 pl-4 ml-4">Your Cart</p>
+        <p class="display-4 pl-4 ml-4">Cart Items</p>
         <hr>
         <table class="table">
             <thead>
@@ -15,6 +15,7 @@
                     <th>Price</th>
                     <th>Quantity</th>
                     <th>Total</th>
+                    
                 </tr>
             </thead>
             <tbody>
@@ -28,6 +29,15 @@
                     <td>{{i.price|currency}}</td>
                     <td>{{i|cart_quantity:request.session.cart}}</td>
                     <td>{{i|price_total:request.session.cart|currency}}</td>
+                  
+                        <td><form action="/cart?id={{i.id}}" method="POST" class="btn-block">
+                            {% csrf_token %}
+                        
+                            <input type="submit" class="float-right btn btn-dark  form-control"
+                              value="Remove from Cart">
+                        </form></td>
+                  
+                  
                 </tr>
             {% endfor %}
             </tbody>

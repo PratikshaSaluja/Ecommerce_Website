@@ -4,7 +4,6 @@ from django.views import View
 class description(View):
     def post(self, request,description_id):
         desc1 = Product.objects.filter(id=description_id)
-        
         product = request.POST.get('product')
         remove = request.POST.get('remove')
         cart = request.session.get('cart')
