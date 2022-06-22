@@ -13,18 +13,19 @@ class cart(View):
         return render(request , 'cart/cart.html' ,{'products2':products2})
     def post(self,request):
             ids = list(request.session.get('cart').keys())
+            ids1 = list(request.session.get('cart'))
+            print(ids1,"^^^^^^^^^^^^^^^^^^^^^^^^^^")
             products2 = Product.get_products_by_id(ids)
+            print(products2,"************************")
             cart = request.session.get('cart')
             
-            product = Product.objects.get(id=request.GET.get('id'))
-            print(product,"+++++++++++++++++++")
-            print(cart,"******************")
-            print(ids,"_______")
-            print(request.GET.get('id'))
-            print(product.id,type(product.id))
-            print(ids)
-            id = str(product.id)
-            print(type(id))
-            ids.remove(id)
-    
+            print(cart,"________________________")
+            #del request.session['cart']
+            for i in products2:
+                cart.pop(i.id)
+                cart = request.session.update(cart)
+            
+            
+            print(cart,"(((((((((((((((((((((")
+
             return render(request , 'cart/cart.html' ,{'products2':products2})
