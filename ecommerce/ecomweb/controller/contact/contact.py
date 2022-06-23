@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from ecomweb.structures.contact import *
 def contact(request):
     if request.method == "POST":
         name = request.POST['name']

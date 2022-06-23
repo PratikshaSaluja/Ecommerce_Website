@@ -31,7 +31,7 @@
         <ul>
             {% if user.is_authenticated %}
             </li>
-            <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+            <li><a class="nav-link scrollto active" href="/">Home</a></li>
                     <li><a class="nav-link scrollto" href="/services">Services</a></li>
             &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
             &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
@@ -45,6 +45,8 @@
             <span class="sr-only">(current)</span></a>
         </li>
             <li><a class="nav-link scrollto" href="/order"> Orders </a></li>
+            <li><a class="nav-link scrollto" href="/contact">Contact Us</a></li>
+            <!-- <li><i class="fa fa-search" aria-hidden="true"></i></li> -->
             <li><a class="nav-link scrollto" href="/logout">Logout</a></li>
             <nav class="navbar navbar-light bg-dark">
                 <div class="container-fluid">
@@ -59,12 +61,15 @@
             &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
             &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
             &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+            <li><a class="nav-link scrollto" href="/contact">Contact Us</a></li>
              <li class="nav-item ">
           <a class="nav-link" href="/cart"> <i class="bx bx-cart"></i> Cart
             <span class="btn btn-outline-secondary">{{request.session.cart.keys|length}}</span>
             <span class="sr-only">(current)</span></a>
         </li>
+        <!-- <li><i class="fa fa-search" aria-hidden="true"></i></li> -->
             {% endif %}
+            
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
     </nav><!-- .navbar -->

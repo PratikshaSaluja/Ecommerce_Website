@@ -29,15 +29,7 @@
                     <td>{{i.price|currency}}</td>
                     <td>{{i|cart_quantity:request.session.cart}}</td>
                     <td>{{i|price_total:request.session.cart|currency}}</td>
-                  
-                        <td><form action="/cart?id={{i.id}}" method="POST" class="btn-block">
-                            {% csrf_token %}
-                        
-                            <input type="submit" class="float-right btn btn-dark  form-control"
-                              value="Remove from Cart">
-                        </form></td>
-                  
-                  
+                    <td><a href="/cart?id={{i.id}}"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
                 </tr>
             {% endfor %}
             </tbody>
@@ -52,7 +44,7 @@
             </tfoot>
         </table>
          <div class="m-3 p-3">
-            <a href="/checkout" data-toggle="modal" data-target="#exampleModal" class="btn btn-outline-info border rounded  col-lg-3 float-right">Check out</a>
+            <a href="/checkout" data-toggle="modal" data-target="#exampleModal" class="float-right btn btn-dark  ">Check out from Cart</a>
         </div>
     </div>
   </div>

@@ -1,4 +1,5 @@
 from django.urls import path
+from django.contrib.auth.decorators import login_required
 from ecomweb.controller.authentication.signin import *
 from ecomweb.controller.registration.signup import *
 from ecomweb.controller.products.category_wise_product import *
@@ -26,7 +27,7 @@ urlpatterns = [
 
     path('sub_category/<str:subcategory_id>/', sub_category, name='sub_category'),
     path('checkout', CheckOut.as_view() , name='checkout'),
-    path('order', OrderView.as_view() , name='order'),
+    path('order', login_required(OrderView.as_view()) , name='order'),
 
 
 
