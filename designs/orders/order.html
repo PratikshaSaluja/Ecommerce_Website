@@ -20,8 +20,8 @@
             {% for order in orders %}
                 <tr>
                     <td>{{forloop.counter}}</td>
-                    <td><img style="height: 80px;" class="rounded-circle" src="{{order.product.image.url}}" alt=""><br>
-                     <a href="{% url 'description' order.id %}"> View Product </a></td>
+                    <td><a href="{% url 'description' order.id %}"><img style="height: 80px;" class="rounded-circle" src="{{order.product.image.url}}" alt=""><br>
+                     </a></td>
                     <td>{{order.product.product_name}}</td>
                     <td>{{order.date}}</td>
                     {% if order.status %}

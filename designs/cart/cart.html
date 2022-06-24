@@ -22,8 +22,8 @@
             {% for i in products2 %}
                 <tr>
                     <td>{{forloop.counter}}</td>
-                    <td><img style="height: 80px;" class="rounded-circle"  src="{{i.image.url}} " alt=""><br>
-                        <a href="{% url 'description' i.id %}"> View Product </a>
+                    <td><a href="{% url 'description' i.id %}"><img style="height: 80px;" class="rounded-circle"  src="{{i.image.url}} " alt=""><br>
+                       </a>
                          </td>
                     <td>{{i.product_name}}</td>
                     <td>{{i.price|currency}}</td>

@@ -13,4 +13,4 @@ class OrderView(View):
             return render(request, 'orders/order.html', {'orders': orders})
         except Exception as E:
             print(E)
-            return render(request, 'orders/order.html', {'orders': orders})
+            return render(request, 'orders/order.html')
