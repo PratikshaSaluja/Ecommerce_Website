@@ -1,0 +1,73 @@
+{% extends "layout/base.html" %}
+{% block content%}
+<section>
+<div class="bbb_viewed1">
+            <div class="row">
+                <div class="bbb_viewed1_slider_container">
+                    <div class="owl-carousel owl-theme bbb_viewed1_slider">
+                         {% for j in banner2 %}
+                        <div class="product-image">
+                                <img src='/media/{{j.image}}' class="card-img-top" height="400" width="400" alt="...">
+                            </div>
+                        {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+</section>
+<main id="main">
+
+    <section class="hero-section">
+        <div class="container-fluid">
+            <!--Slideshow starts here -->
+            <div class="bbb_viewed">
+                <div class="row">
+                    <div class="bbb_viewed_slider_container">
+                        <div class="owl-carousel owl-theme bbb_viewed_slider">
+                            {% for i in allProds %}
+                            <div class="owl-item">
+                                <h5 class="card-title">{{i.category_name}}&emsp; </h5>
+                                <a href="{% url 'sub_category' i.id %}">
+                                <div class="product-image">
+                                    <img src='/media/{{i.image}}' class="card-img-top" height="400" width="400" alt="...">
+                                </div>
+                                <div class="card-body">
+                                        </a>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+   
+
+    <section id="testimonials" class="testimonials">
+        <div class="container position-relative">
+            <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+                <div class="swiper-wrapper">
+                            {% for i in author1 %}
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <img src='/media/{{i.authorimage}}' class="testimonial-img"
+                                 alt="">
+                            <h3>{{ i.heading }}</h3>
+                            <h4>{{ i.subheading }}</h4>
+                            <p>
+                                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                {{ i.description }}
+                                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                            </p>
+                        </div>
+                    </div>
+                        {% endfor %}
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+    {% include "contact/contact.html" %}
+</main>
+{% endblock %}

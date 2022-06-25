@@ -1,0 +1,25 @@
+{% extends "layout/base.html" %}
+{% block content %}
+<main id="main">
+ 
+    <section id="hero" class="service1">
+    <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+            <div class="row icon-boxes">
+          {% for i in desc %}
+        <div class="col-md-8 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="200">
+          <div class="icon-box">
+            <a href="{% url 'description' i.id %}">
+           <div class="image_overflow">
+               <img src="../../media/{{i.image}}" class="img-fluid"  >
+           </div>
+          </a>
+              <br><br>
+            <h4 class="title">{{i.product_name}}</h4>
+          </div>
+        </div>
+          {% endfor %}
+            </div>
+        </div>
+  </section>
+</main>
+{% endblock %}
