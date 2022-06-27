@@ -10,7 +10,7 @@ def contact(request):
 
             Contact = contacts(name=name, email=email, subject=subject, msg=msg)
             Contact.save()
-            return redirect("contact/contact")
+            return redirect("/contact")
         else:
             return render(request, "contact/contact.html")
     except Exception as E:
