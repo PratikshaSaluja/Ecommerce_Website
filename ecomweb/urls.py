@@ -6,6 +6,8 @@ from ecomweb.controller.products.category_wise_product import *
 from ecomweb.controller.products.sub_category_wise_product import *
 from ecomweb.controller.products.detailed_product_page import *
 from ecomweb.controller.cart.cart import *
+from ecomweb.controller.cart.showcart import *
+from ecomweb.controller.cart.add_to_cart import *
 from ecomweb.controller.services.services import *
 from ecomweb.controller.contact.contact import *
 from ecomweb.controller.checkout.checkout import *
@@ -23,8 +25,8 @@ urlpatterns = [
     path('portfolio/<str:productdetail_id>/', portfolio, name='portfolio'),
     path('description/<str:description_id>/', description.as_view(), name='description'),
     path('contact', contact, name='contact'),
-    path('cart', cart.as_view() , name='cart'),
-
+    path('cart', show_cart , name='showcart'),
+    path('add_to_cart', add_to_cart , name='add_to_cart'),
     path('sub_category/<str:subcategory_id>/', sub_category, name='sub_category'),
     path('checkout', CheckOut.as_view() , name='checkout'),
     path('order', login_required(OrderView.as_view()) , name='order'),

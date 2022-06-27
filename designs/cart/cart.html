@@ -1,51 +1,61 @@
 {% extends "layout/base.html" %}
 {% block content %}
-{% load cart %}
-{% load custom_filter %}
-<div class="container">
-    <div class="border rounded p-5 m-5">
-        <p class="display-4 pl-4 ml-4">Cart Items</p>
-        <hr>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Sno.</th>
-                    <th>Image</th>
-                    <th>Product</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                    <th>Total</th>
-                    
-                </tr>
-            </thead>
-            <tbody>
-            {% for i in products2 %}
-                <tr>
-                    <td>{{forloop.counter}}</td>
-                    <td><a href="{% url 'description' i.id %}"><img style="height: 80px;" class="rounded-circle"  src="{{i.image.url}} " alt=""><br>
-                       </a>
-                         </td>
-                    <td>{{i.product_name}}</td>
-                    <td>{{i.price|currency}}</td>
-                    <td>{{i|cart_quantity:request.session.cart}}</td>
-                    <td>{{i|price_total:request.session.cart|currency}}</td>
-                    <td><a href="/cart?id={{i.id}}"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
-                </tr>
-            {% endfor %}
-            </tbody>
-            <tfoot>
-                <tr>
-                    <th colspan="4"></th>
-                    <th class="" colspan="">Total</th>
-                    {% if products2 %}
-                    <th>{{products2|total_cart_price:request.session.cart|currency}}</th>
-                     {% endif %}
-                </tr>
-            </tfoot>
-        </table>
-         <div class="m-3 p-3">
-            <a href="/checkout" data-toggle="modal" data-target="#exampleModal" class="float-right btn btn-dark  ">Check out from Cart</a>
+<div class="row">
+    <h1 class="text-center mb-5">Shopping Cart</h1>
+    <div class="col-sm-8">
+    <div class="card">
+     <div class="card-body">
+      <h3>Cart Items</h3>
+      {% for cart in carts %}
+      <hr>
+      <div class="row">
+       <div class="col-sm-3 text-center align-self-center"><a href="{% url 'description' cart.id %}"></a><img 
+  src="{{cart.product.product_image.url}}" alt="" srcset="" class="img-fluid img-thumbnail 
+  shadow-sm" height="150" width="150"></a> </div>
+       <div class="col-sm-9">
+        <div>
+         <h5>{{cart.product.product_name}}</h5>
+         
+         <div class="my-3">
+          <label for="quantity">Quantity:</label>
+          <a class="minus-cart btn" pid="{{cart.product.id}}"><i class="fas fa-minus-square 
+  fa-lg"></i></a>
+            <span id="quantity">{{cart.quantity}}</span>
+          <a class="plus-cart btn" pid="{{cart.product.id}}"><i class="fas fa-plus-square fa-
+  lg"></i></a>
+         </div> 
+         <div class="d-flex justify-content-between">
+          <a class="btn btn-sm btn-secondary mr-3 remove-cart" pid={{cart.product.id}}>Remove
+  item </a>       
+          <p class="mb-0"><span><strong>Rs. 
+  {{cart.product.product_price}}</strong></span></p>
+         </div>
         </div>
+       </div>
+      </div>
+      {% endfor %}
+     </div>
+     </div>
+    </div>
+    <div class="col-sm-4">
+     <div class="card">
+      <div class="card-body">
+        <h3>The Total Amount of</h3>
+        <ul class="list-group">
+         <li class="list-group-item d-flex justify-content-between align-items-center border-
+  0 px-0 pb-0">Amount<span>Rs. <span id="amount">{{amount|floatformat:2}}</span> </span></li>
+        <hr>
+         <li class="list-group-item d-flex justify-content-between align-items-center border-
+  0 px-0 mb-3">
+          <span><strong>Rs. </strong><strong id="totalamount"> {{totalamount|
+  floatformat:2}}</strong></span>
+         </li>
+        </ul>
+        <div class="d-grid"><a href="{% url 'checkout' %}" class="btn btn-danger fw-
+  bold">Checkoout</a></div>
+      </div>
+     </div>
+    </div>
     </div>
   </div>
-{% endblock %}
+ n{% endblock %}
