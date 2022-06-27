@@ -23,9 +23,12 @@ class Home(View):
             return render(request, "home/home2.html", {'allProds': allProds, 'serv100': service1 , 'author1':author1,'banner2':banner1,'search':search})
     def post(self,request):
         try:
-            search= request.POST.get('search')
+            search = request.POST.get('search')
             desc = Product.objects.filter(Q(product_name__icontains=search)| Q(category_id__category_name=search)).values('id','product_name', 'category_id', 'price' ,'desc', 'image')
-            return render(request, 'sub_category/sub_category.html', {'search':search,'desc':desc})
+            if desc :
+                return render(request, 'sub_category/sub_category.html', {'search':search,'desc':desc})
+            else:
+                return render(request, 'sub_category/emptysearch.html')
         except Exception as E:
             print(E)
-            return render(request, 'sub_category/sub_category.html', {'search':search,'desc':desc})
+            return render(request, 'sub_category/emptysearch.html', {'search':search,'desc':desc})

@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from ecomweb.structures.Products import *
 from django.views import View
+from django.contrib import messages
 class cart(View):
     def get(self, request):
         try:
