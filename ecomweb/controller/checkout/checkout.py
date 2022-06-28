@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.views import View
 from ecomweb.structures.Products import *
 from ecomweb.structures.Order import *
+from ecomweb.structures.cart import *
 class CheckOut(View):
     def post(self, request):
         try:
@@ -10,8 +11,9 @@ class CheckOut(View):
             state = request.POST.get('state')
             pincode = request.POST.get('pincode')
             phone = request.POST.get('phone')
-            username1 = request.session.get('username')
-            cart = request.session.get('cart')
+            user = request.user
+            username1 = request.user.get_username()
+            cart =Cart(user=user,product=product)
             products = Product.get_products_by_id(list(cart.keys()))
             current_user = User.objects.get(username=username1)
             print(address_line1,address_line2,state,pincode, phone, username1, cart, products,current_user.id)
