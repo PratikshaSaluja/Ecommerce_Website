@@ -47,7 +47,10 @@
           <span><strong>Rs. </strong><strong id="totalamount">{{amount|floatformat:2}}</strong></span>
          </li>
         </ul>
+        <form action="/checkout" method="post" role="form">
+          {% csrf_token %}
         <div class="d-grid"><a href="{% url 'checkout' %}" class="btn btn-danger fw-bold">Checkout</a></div>
+      </form>
       </div>
      </div>
     </div>

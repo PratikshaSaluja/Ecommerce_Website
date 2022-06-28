@@ -5,7 +5,6 @@ from ecomweb.controller.registration.signup import *
 from ecomweb.controller.products.category_wise_product import *
 from ecomweb.controller.products.sub_category_wise_product import *
 from ecomweb.controller.products.detailed_product_page import *
-from ecomweb.controller.cart.cart import *
 from ecomweb.controller.cart.showcart import *
 from ecomweb.controller.cart.cart_quantity import *
 from ecomweb.controller.cart.add_to_cart import *

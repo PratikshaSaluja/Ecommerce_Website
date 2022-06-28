@@ -27,7 +27,7 @@ class CheckOut(View):
                             phone=phone,
                             )
                 order.save()
-            request.session['cart'] = {}
+            
             return redirect('/order')
         except Exception as E:
             print(E)
