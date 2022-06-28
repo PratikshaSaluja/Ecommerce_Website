@@ -17,7 +17,7 @@ def plus_cart(request):
         amount = 0.0
         cart_product = [p for p in Cart.objects.all() if p.user == request.user]
         for p in cart_product:
-            tempamount = (p.quantity * p.product.discounted_price)
+            tempamount = (p.quantity * p.product.price)
 
             amount += tempamount
 
@@ -40,7 +40,7 @@ def minus_cart(request):
         
         cart_product = [p for p in Cart.objects.all() if p.user == request.user]
         for p in cart_product:
-            tempamount = (p.quantity * p.product.discounted_price)
+            tempamount = (p.quantity * p.product.price)
             amount += tempamount
 
         data = {

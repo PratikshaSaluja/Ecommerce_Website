@@ -20,8 +20,8 @@ def show_cart(request):
         
             return render(request, 'cart/cart.html', {'carts':cart, 'amount':amount,'totalitem':totalitem})
         else:
-            return render(request, 'app/emptycart.html', {'totalitem':totalitem})
+            return render(request, 'cart/emptycart.html', {'totalitem':totalitem})
     else:
-        return render(request, 'app/emptycart.html', {'totalitem':totalitem})
+        return render(request, 'cart/emptycart.html', {'totalitem':totalitem})
               
 
