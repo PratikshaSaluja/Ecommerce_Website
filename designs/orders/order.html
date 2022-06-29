@@ -1,7 +1,6 @@
 {% extends "layout/base.html" %}
 {% block content %}
-{% load cart %}
-{% load custom_filter %}
+
 <div class="container">
    <div class="border rounded p-5 m-5">
         <p class="display-4 pl-4 ml-4">Your Orders</p>
@@ -25,9 +24,11 @@
                     <td>{{order.product.product_name}}</td>
                     <td>{{order.date}}</td>
                     {% if order.status %}
-                    <td><small class="badge badge-success">Completed</small></td>
-                    {%else%}
-                    <td><small class="badge badge-warning">Pending</small></td>
+                        <td><small class="badge badge-success">Completed</small></td>
+                        {% elif %}
+                        <td><small class="badge badge-primary"></small></td>
+                        {% else %}
+                        <td><small class="badge badge-warning">Pending</small></td>
                     {% endif %}
                 </tr>
             {% endfor %}
