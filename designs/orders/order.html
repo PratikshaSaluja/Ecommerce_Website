@@ -19,17 +19,12 @@
             {% for order in orders %}
                 <tr>
                     <td>{{forloop.counter}}</td>
-                    <td><a href="{% url 'description' order.id %}"><img style="height: 80px;" class="rounded-circle" src="{{order.product.image.url}}" alt=""><br>
+                    <td><a href="{% url 'description' order.product.id %}"><img style="height: 80px;" class="rounded-circle" src="../../media/{{order.product.image}}" alt=""><br>
                      </a></td>
                     <td>{{order.product.product_name}}</td>
                     <td>{{order.date}}</td>
-                    {% if order.status %}
-                        <td><small class="badge badge-success">Completed</small></td>
-                        {% elif %}
-                        <td><small class="badge badge-primary"></small></td>
-                        {% else %}
-                        <td><small class="badge badge-warning">Pending</small></td>
-                    {% endif %}
+                    <td>{{order.status}}</td>
+                    
                 </tr>
             {% endfor %}
             </tbody>

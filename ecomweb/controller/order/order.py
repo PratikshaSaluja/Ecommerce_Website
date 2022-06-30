@@ -5,8 +5,8 @@ from django.views import View
 class OrderView(View):
     def get(self , request ):
         try:
-            
-            orders = Order.objects.values("product__product_name","date","status")
+            user= request.user
+            orders = Order.objects.filter(user=user).all()
             print(orders)
             return render(request, 'orders/order.html', {'orders': orders})
         except Exception as E:
