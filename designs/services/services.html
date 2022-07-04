@@ -8,10 +8,11 @@
           {% for service20 in serv100 %}
         <div class="col-md-8 col-lg-4 d-flex align-items-stretch mb-7 mb-lg-0" data-aos="zoom-in" data-aos-delay="200">
           <div class="icon-box">
-              
-            <img src="media/{{service20.serviceimage}}" class="img-fluid"  alt="">
+            <a href="{% url 'portfolio' service20.id %}">
+            <img  src="media/{{service20.serviceimage}}" class="img-fluid"  alt=""></a>
               <br><br>
-            <h4 class="title"><a href="{% url 'portfolio' service20.id %}">{{ service20.serviceheading }}</a></h4>
+            <h4 class="title">{{ service20.serviceheading }}</h4>
+          
           </div>
         </div>
           {% endfor %}
