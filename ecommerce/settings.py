@@ -83,7 +83,7 @@ DATABASES = {
         'NAME': config('DBNAME', default='Ecom'),
         'USER': config('DBUSR', default='EcomU'),
         'PASSWORD': config('DBPWD', default='EcomPwD'),
-        'HOST': config('DBHOST', default='localhost'),
+        'HOST': config('DBHOST', default='192.168.0.45'),
         'PORT': 3306,
         'OPTIONS': {
              'charset': 'utf8mb4',
