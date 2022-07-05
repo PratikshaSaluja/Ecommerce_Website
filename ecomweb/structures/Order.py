@@ -1,7 +1,6 @@
 from django.db import models
 import datetime
 from django.contrib.auth.models import User, auth
-from pymysql import NULL
 from ecomweb.structures.Products import *
 STATUS_CHOICES = (
   ('Accepted','Accepted'),
