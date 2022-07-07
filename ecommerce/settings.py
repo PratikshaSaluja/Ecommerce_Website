@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'ecomweb'
+    'ecomweb',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
