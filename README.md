@@ -1,1 +1,1 @@
-python version == 3.10.2
+python version == 3.8.7
